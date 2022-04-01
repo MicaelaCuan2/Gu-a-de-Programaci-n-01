@@ -16,23 +16,35 @@ public class Ejercicio12 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int puntaje = dado1 + dado2 + dado3;
-        if (dado1 == 6 && dado2 == 6 && dado3 == 6)
+        int SumaSeis = 0;
+        if (dado1 == 6)
         {
-            Debug.Log("Excelente");
+            SumaSeis++;
         }
-        else if (dado1 == 6 && dado2 == 6 || dado2 == 6 && dado3 == 6 || dado1 == 6 && dado3 == 6)
+        if (dado2 == 6)
         {
-            Debug.Log("Muy bien");
+            SumaSeis++;
         }
-        else if (dado1 == 6 || dado2 == 6 || dado3 == 6)
+        if (dado3 == 6)
         {
-            Debug.Log("Regular");
+            SumaSeis++;
         }
-        else
+        switch (SumaSeis)
         {
-            Debug.Log("Insuficiente");
+            case 0:
+                Debug.Log("Insuficiente");
+                break;
+            case 1:
+                Debug.Log("Regular");
+                break;
+            case 2:
+                Debug.Log("Muy Bien");
+                break;
+            case 3:
+                Debug.Log("Excelente");
+                break;
         }
+
     }
 
     // Update is called once per frame
